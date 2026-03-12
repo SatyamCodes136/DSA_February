@@ -14,13 +14,13 @@ public:
         int n = 0;
         ListNode* temp = head;
         //calculate the len of LL
-        while(temp->next != NULL){
+        while(temp != NULL){
             n++;
             temp = temp->next;
         }
 
         temp = head;
-        for(int i = n/2; i < n; i++){
+        for(int i = 1; i <= n/2; i++){
             temp = temp->next;
         }
         return temp;
