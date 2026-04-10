@@ -9,15 +9,12 @@ public:
         }
         // sort by position descending
         sort(cars.rbegin(), cars.rend());
-        
-        int fleets = 0;
-        double curr = 0.0;
+
+        stack<double> st;
         for(auto &car: cars){
-            if(car.second > curr){
-                fleets++;  
-                curr = car.second; 
-            }       
+            double t = car.second;
+            if(st.empty() || t > st.top()) st.push(t);
         }
-        return fleets;
+        return st.size();
     }
 };
