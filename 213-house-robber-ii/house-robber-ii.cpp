@@ -12,11 +12,11 @@ public:
 
     int rob(vector<int>& nums) {
         int n = nums.size();
-        if(n== 1) return nums[0];
-        vector<int> dp1(n, -1);
+        if(n == 1) return nums[0];
         vector<int> nums1(nums.begin(), nums.end()-1);
-        vector<int> dp2(n, -1);
+        vector<int> dp1(n, -1);
         vector<int> nums2(nums.begin()+1, nums.end());
+        vector<int> dp2(n, -1);
         int case1 = rec(nums1, dp1, 0);
         int case2 = rec(nums2, dp2, 0);
         return max(case1, case2);
