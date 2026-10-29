@@ -9,9 +9,8 @@ public:
                 j++;
             }
         }
-        while(j < n){
-            nums[j] = 0;
-            j++;
+        for(int i = j; i < n; i++){
+            nums[i] = 0;
         }
         return;
     }
